@@ -1,0 +1,17 @@
+  {{#d-modal-body title="custom_modal_title" class="custom-modal"}}
+    <div class="user-selector">
+      <p>Users:</p>
+    {{custom-user-selector
+      usernames=value
+  placeholderKey=field.placeholder
+  tabindex=field.tabindex}}
+    </div>
+    <p>Brief description:</p>
+    {{textarea value=newNote}}
+    {{d-button
+      action=(action "attachNote")
+      label="custom_modal_button"
+      class="btn-primary"
+      disabled=attachDisabled
+    }}
+  {{/d-modal-body}}
