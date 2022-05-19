@@ -1,9 +1,10 @@
-import { ajax } from "discourse/lib/ajax";
-import { popupAjaxError } from "discourse/lib/ajax-error";
+import { ajax } from 'discourse/lib/ajax';
+import { popupAjaxError } from 'discourse/lib/ajax-error';
+import DiscourseURL from 'discourse/lib/url';
 
 let addLike = function (args) {
   const { title, post, category, users } = args;
-  console.log("=====inside action");
+  console.log('=====inside action');
   console.log(typeof title);
   console.log(title);
   console.log(typeof post);
@@ -13,24 +14,25 @@ let addLike = function (args) {
   console.log(typeof users);
   console.log(users);
   const skip_validations = true;
-  return ajax("/posts", {
-    type: "POST",
+  return ajax('/posts', {
+    type: 'POST',
     data: {
-      category: 399,
-      skip_validations: skip_validations,
+      category,
+      skip_validations,
       skip_revision: true,
       // lock the topic, so that the user can't edit it
       bypass_bump: true,
-      title: title,
+      title,
       raw: post,
       auto_track: false,
     },
   })
     .catch(popupAjaxError)
     .then(function (result) {
+      return DiscourseURL.routeTo(`/t/${result.topic_id}`);
       users.forEach((user) => {
         ajax(`/user_badges`, {
-          type: "POST",
+          type: 'POST',
           data: {
             badge_id: 73,
             username: user,
@@ -38,7 +40,7 @@ let addLike = function (args) {
           },
         }).catch(popupAjaxError);
       });
-      console.log(result);
+      
     });
 };
 
