@@ -29,18 +29,18 @@ let addLike = function (args) {
   })
     .catch(popupAjaxError)
     .then(function (result) {
-      return DiscourseURL.routeTo(`/t/${result.topic_id}`);
       users.forEach((user) => {
         ajax(`/user_badges`, {
           type: 'POST',
           data: {
-            badge_id: 73,
+            // TODO make badge_id a setting
+            badge_id: 103,
             username: user,
-            // reason: `/${result.topic_id}`,
+            reason: `/t/${result.topic_id}`,
           },
         }).catch(popupAjaxError);
       });
-      
+      return DiscourseURL.routeTo(`/t/${result.topic_id}`);
     });
 };
 
