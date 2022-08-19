@@ -13,7 +13,7 @@ New_topic_button_title:
 endorsement_category:
   type: list
   list_type: category
-  default: "33"
+  default: "399"
   description:
     en: "Category where endorsement topics will be created. NOTE: Choose only one category"
 Topic_title:
@@ -22,6 +22,6 @@ Topic_title:
     en: "Enter the title you want for the post that will be created."
 endorsement_badge_id:
   type: integer
-  default: 102
+  default: 138
   description:
     en: "Badge ID of endorsement"
