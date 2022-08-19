@@ -1,20 +1,27 @@
 New_topic_button_icon:
-  default: 'plus'
+  default: "handshake"
   description:
     en: Choose an icon for the button. You can use any FontAwesome 4.7 icon name like "music" or "star" without quote marks.
 New_topic_button_text:
-  default: 'Endorse a participant'
+  default: "Endorse a participant"
   description:
-    en: Enter the text you want the button to use. You can also leave this empty if you want to only use an icon.
+    en: "Enter the text you want the button to use. You can also leave this empty if you want to only use an icon."
 New_topic_button_title:
-  default: ''
+  default: "Grant endorsement(s) to team participants for their work during virtual-internships."
   description:
-    en: 'Enter the title you want the button to use. If this is left empy, the title will be the same as the button text'
-Hide_default_button:
-  default: true
-  description:
-    en: Hide the default "New topic" button in topic lists?
+    en: "Enter the title you want the button to use. If this is left empty, the title will be the same as the button text."
 endorsement_category:
   type: list
   list_type: category
-  default: ''
+  default: "33"
+  description:
+    en: "Category where endorsement topics will be created. NOTE: Choose only one category"
+Topic_title:
+  default: "Virtual-Internship 2022 Endorsements"
+  description:
+    en: "Enter the title you want for the post that will be created."
+endorsement_badge_id:
+  type: integer
+  default: 102
+  description:
+    en: "Badge ID of endorsement"
