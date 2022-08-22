@@ -3,14 +3,15 @@
     {{#if (theme-setting 'subtitle')}}
     <p>{{theme-setting 'subtitle'}}</p>
     {{/if}}
-    <h3>Users:</h3>
+    <h3>Award to:</h3>
     {{email-group-user-chooser
       value=usernames
       placeholderKey=field.placeholder
       tabindex=field.tabindex
     }}
   </div>
-  <h3>Brief description:</h3>
+  <div class="endorsement-description">
+    <h3>Brief description:</h3>
   {{textarea value=newNote
   placeholder=(theme-setting 'description_placeholder')}}
   {{d-button
@@ -19,4 +20,5 @@
     class='btn-primary'
     disabled=attachDisabled
   }}
+  </div>
 {{/d-modal-body}}
