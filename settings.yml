@@ -25,3 +25,11 @@ endorsement_badge_id:
   default: 138
   description:
     en: "Badge ID of endorsement"
+subtitle:
+  default: "Endorsements for the Virtual-Internship 2022 Sessions"
+  description:
+    en: "Enter the subtitle you want for the modal. Below Peer Endorsements"
+description_placeholder:
+  default: "Enter your description of why you would like to endorse a particular individual"
+  description:
+    en: "Enter the placeholder you want for the description field."
