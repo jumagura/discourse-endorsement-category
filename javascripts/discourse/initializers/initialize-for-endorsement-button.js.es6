@@ -14,7 +14,7 @@ export default {
       if (!currentUser) {
         return;
       }
-      if (currentUser.staff || currentUser.trust_level >= settings.min_trust_level) {
+      if (currentUser) {
         api.decorateWidget("header-buttons:after", (helper) => {
           const ntb_text = settings.New_topic_button_text,
             ntb_title = settings.New_topic_button_title.length
